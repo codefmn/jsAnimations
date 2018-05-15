@@ -12,13 +12,13 @@ var timer = null;
 function move(destination){
     clearInterval(timer);
     var sidebar = document.getElementById('sidebar');
-    var speed = 0;
-    speed = sidebar.offsetLeft < destination ? 20:-20;
+    var speed = (destination - sidebar.offsetLeft)/10;
+    speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
     timer = setInterval(function(){
         if(sidebar.offsetLeft==destination){
             clearInterval(timer);
         }else{
             sidebar.style.left = sidebar.offsetLeft+speed+'px';
         }
-    },100);
+    },50);
 }
