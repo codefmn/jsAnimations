@@ -13,8 +13,8 @@ var alpha = 0;
 function ChangeOpacity(goal){
     clearInterval(timer);
     var container = document.getElementById('container1');
-    var speed = 0;
-    speed = alpha<goal ? 10:-10;
+    var speed = (goal-alpha)/10;
+    speed = speed>0 ? Math.ceil(speed):Math.floor(speed);
     timer = setInterval(function(){
         if(alpha==goal){
             clearInterval(timer);
