@@ -1,0 +1,13 @@
+#container1, #container2{
+    width: 200px;
+    height: 200px;
+    background-color: #0c0;
+    margin: 1px;
+    opacity: 0.2;
+    /* For IE8 and earlier*/
+    /* filter: alpha(opacity:20);*/
+}
+
+#container2:hover{
+    opacity: 1;
+}
