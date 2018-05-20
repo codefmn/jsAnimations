@@ -13,13 +13,13 @@ window.onload = function() {
 
 function move(object, destination){
 	clearInterval(object.timer);
-	var speed = (destination - object.offsetWidth)/10;
+	var speed = (destination - object.clientWidth)/10;
 	speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
 	object.timer = setInterval(function(){
-		if(object.offsetWidth==destination){
+		if(object.clientWidth==destination){
 			clearInterval(object.timer);
 		}else{
-			object.style.width=object.offsetWidth+speed+'px';
+			object.style.width=object.clientWidth+speed+'px';
 		}
 	},100);
 }
